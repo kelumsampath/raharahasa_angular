@@ -1,0 +1,33 @@
+<div class="outerbox">
+  <div class="searchform">
+      <form class="form" #form=ngForm (submit)="searchrecipe()">
+        <div class="form-group searchtab">
+            <input type="text" class="form-control" id="search" placeholder="Recipe name" name="search" [(ngModel)]="search" required ><br>
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="!form.valid">Search</button>
+          </div>
+    </form>
+  </div>
+</div>
+
+<div class="container" *ngIf="this.searchstatus==true">
+<div id="menuitem" *ngIf="this.recipecount==true">
+    <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i">
+       <li>
+         <button [routerLink]="['/allrecipe',recipies.recipename]" class="add">
+         <div id="menu">
+         <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
+         <h1> {{ recipies.recipename }}</h1>
+         {{ recipies.description  }}
+        </div>
+         </button>
+      </ul>
+    </div>
+
+    <div id="menuitem" *ngIf="this.recipecount==false">
+            <div class="norecipe">
+              <h3>NO RECIPE FOUND!</h3>
+            </div>
+      </div>
+  </div>
+
+  

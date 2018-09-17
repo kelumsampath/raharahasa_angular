@@ -1,0 +1,65 @@
+.container{
+    width: 80%;
+    background-color: bisque;
+    border-style: double;
+    border-width: 5px;
+    border-color: blue;
+    margin-top: 3%;
+    text-align: center;
+  }
+  .add{
+    width: 80%;
+    height: 200px;
+    box-align:"left";
+    border-style: solid;
+    border-color: red; 
+    text-align: center;
+    background-color: blue;
+}
+ul{
+    list-style-type:none;
+    margin-top: 20px;
+    }
+img {
+    float: left;
+    height: 190px;
+    width: 300px;
+}
+
+
+.nav_image:hover {
+    border-radius: 60%;
+    background-color:beige;
+}
+
+
+#menu-outer {
+    margin-top: 0px;
+	height: auto;
+    
+}
+
+
+#horizontal-list{
+    width: 100%;
+    text-align: center;
+    background-color:#111111;
+    
+}
+
+
+#pending{
+    background-color: yellow;
+  }
+  #accepted{
+    background-color: green;
+  }
+  #rejected{
+    background-color: red;
+  }
+
+.func{
+    margin-left:5px;
+    margin-right: 5px;
+}
+

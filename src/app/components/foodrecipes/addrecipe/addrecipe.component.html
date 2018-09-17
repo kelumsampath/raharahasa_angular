@@ -1,0 +1,93 @@
+
+
+<div class="container addrecipe">
+  <form class="form" #form=ngForm (submit)="addrecipe()">
+      <fieldset>
+        <legend style="text-align:center"><h2>Publish Recipe</h2> </legend>
+          <div class="form-group">
+              <label for="exampleInputPassword1">Recipe Name:</label>
+              <input type="text" class="form-control" id="recipename" placeholder="Food name" name="recipename" [(ngModel)]="recipename" required>
+            </div>
+  
+            <div class="form-group">
+                <label for="exampleInputPassword1">Ingredients:</label>
+               <!-- <input type="textarea"  class="form-control" id="ingredients"  name="ingredients" [(ngModel)]="ingredients"  > -->
+                <textarea cols="5" rows="10" class="form-control" id="ingredients" placeholder="enter Ingredients" name="ingredients" [(ngModel)]="ingredients" ></textarea>
+              </div>
+            
+            <div class="form-group">
+              <label for="exampleInputPassword1">Directions:</label>
+              <!--input type="text"  class="form-control" id="directions"  name="directions" [(ngModel)]="directions"  -->
+              <textarea cols="5" rows="10" class="form-control" id="directions" placeholder="enter Directions" name="directions" [(ngModel)]="directions" ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Prep-Time:</label>
+              <input type="number"   min="0" class="form-control" id="preptime"  name="preptime" [(ngModel)]="preptime"  >
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Cook-Time:</label>
+              <input type="number"   min="0" class="form-control" id="cooktime"  name="cooktime" [(ngModel)]="cooktime"  >
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Ready-Tme:</label>
+              <input type="number"   min="0" class="form-control" id="readytime"  name="readytime" [(ngModel)]="readytime"  >
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">No of Serves:</label>
+              <input type="number"   min="0" class="form-control" id="serves"  name="serves" [(ngModel)]="serves" >
+            </div>
+            <!--
+            <div class="form-group">
+              <label for="exampleInputPassword1">Notes</label>
+              <input type="text"  class="form-control" id="notes"  name="notes" [(ngModel)]="notes" >
+            </div>
+            -->
+            <div class="form-group">
+                <label for="exampleInputPassword1">Rate:</label><br>
+                <input type="radio" class="" id="rate" name="rate" [(ngModel)]="rate" value="Hard">Hard<br>
+                <input type="radio" class="" id="rate" name="rate" [(ngModel)]="rate" value="Normal">Normal<br>
+                <input type="radio" class="" id="rate" name="rate" [(ngModel)]="rate" value="easy">easy<br>
+                <input type="radio" class="" id="rate" name="rate" [(ngModel)]="rate" value="more Easy">More Easy<br>
+              </div>
+  
+          <div class="form-group">
+              <label for="exampleInputPassword1">Notes:</label>
+              <textarea cols="5" rows="10" class="form-control" id="notes" placeholder="enter ingredients" name="notes" [(ngModel)]="notes" ></textarea>
+            </div>
+          
+            <div class="form-group">
+              <label for="exampleInputPassword1">Category:</label><br>
+              <input type="radio" class="" id="catagory" name="catagory" [(ngModel)]="catagory" value="Rice and Curry">Rice and curry<br>
+              <input type="radio" class="" id="catagory" name="catagory" [(ngModel)]="catagory" value="Cakes">Cakes<br>
+              <input type="radio" class="" id="catagory" name="catagory" [(ngModel)]="catagory" value="Short Meal">Short Meal<br>
+              <input type="radio" class="" id="catagory" name="catagory" [(ngModel)]="catagory" value="Other">Other<br>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Quick Discription:</label>
+              <textarea cols="5" rows="10" class="form-control" id="description" placeholder="enter description" name="description" [(ngModel)]="description" ></textarea>
+            </div>
+          
+            <div>
+                <label for="exampleInputPassword1">Image:</label><br>
+              <img [src]="imageUrl" style="width: 250px; height: 200px;">
+              <input type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)" required>
+          </div>
+  
+  
+          <br><br>
+          <div style="text-align:center">
+          <button [routerLink]="['/foodrecipe']" class="btn btn-info btn-lg back">
+            <span class="glyphicon glyphicon-chevron-left"></span> Back
+        </button>
+        <button type="submit" class="btn btn-success btn-lg" [disabled]="!form.valid">Register</button>
+        <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
+      </div>
+      </fieldset>
+    </form>
+    
+  </div>

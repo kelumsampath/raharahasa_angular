@@ -1,0 +1,43 @@
+.nav_image {
+    border-radius: 50%;
+    width:150px; 
+    height: 150px;
+  
+  }
+
+
+
+
+img {
+   
+    color: white;
+    
+    padding: 20px;
+   
+}
+ 
+.nav_image:hover {
+    border-radius: 60%;
+    background-color:beige;
+}
+
+
+#menu-outer {
+    margin-top: 0px;
+	height: auto;
+    
+    
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+
+table{
+    width: 100%;
+    text-align: center;
+    background-color:#111111;
+     
+}

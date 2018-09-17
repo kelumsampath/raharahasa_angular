@@ -1,0 +1,31 @@
+nav{
+    background-color:rgba(0, 0, 0, 0.7);list-style-type: none;overflow: hidden;padding:10px;
+}
+nav a:hover{
+    color:rgb(79,191,219);
+    padding: 9px 9px;
+}
+nav div ul li a:hover{
+    color:rgb(79,191,219);
+    border: 1.5px solid rgb(255, 255, 255);
+    transition:all 0.25s ease-in;
+    padding: 9px 9px;
+    border-radius: 10px;
+}
+div ul li a{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 5mm;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none; /*remove undeline of link*/
+}
+nav a{
+    margin-left: 20px;
+    font-size: 5mm;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none; /*remove undeline of link*/
+}

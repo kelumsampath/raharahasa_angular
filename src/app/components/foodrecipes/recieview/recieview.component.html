@@ -1,0 +1,72 @@
+
+
+<div class="container">
+  <div>
+    <br>
+    <h1 class="alert-heading ">{{myrecipe.recipename}}</h1>
+      <img src={{myrecipe.imageUrl}} alt="" class="rounded"/>
+      <hr>
+      <table>
+        <tr>
+          <td>Catogory: {{myrecipe.catagory}}</td>
+          <td>Rate: {{myrecipe.rate}}</td>
+          <td>Likes: {{likes}}</td>
+        </tr>
+        <tr>
+          <td>Prep-Time: {{myrecipe.preptime}} minutes</td>
+          <td>Cook-Time: {{myrecipe.cooktime}} minutes</td>
+          <td>Ready-Time: {{myrecipe.readytime}} minutes</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Serves: {{myrecipe.serves}}</td>
+          <td></td>
+        </tr>
+      </table>
+      <hr>
+      <div >
+          <h3>Description:</h3>
+          <p>{{myrecipe.description}}</p> 
+        </div>
+        <hr>
+      <div>
+        <h3>Ingregients:</h3>
+        <p>{{myrecipe.ingredients}}</p> 
+      </div>
+      <hr>
+      <div>
+          <h3>Directions:</h3>
+          <p>{{myrecipe.directions}}</p> 
+        </div>
+      
+      <div  *ngIf="myrecipe.notes!=''">
+          <hr>
+          <h3>Special Notes:</h3>
+          <p>{{myrecipe.notes}}</p> 
+          
+        </div>
+        <hr>
+          <button [routerLink]="['../']" class="btn btn-info btn-lg back">
+              <span class="glyphicon glyphicon-chevron-left"></span> Back
+          </button>
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A4200%2Fallrecipe%2Fhot%2520dog&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+          <button class="btn btn-info btn-lg liked" (click)="unlike()" *ngIf="Islike">
+              <span class="glyphicon glyphicon-thumbs-up"></span> Liked
+          </button>
+          <button class="btn btn-info btn-lg noliked" (click)="like()" *ngIf="Islike==false">
+              <span class="glyphicon glyphicon-thumbs-up"></span> Like 
+          </button>
+
+            <div  *ngIf="isrealuser==true">
+              <br>
+              <button (click)="deleterecipe()">Delete this Recipe</button>
+            </div>
+            <div *ngIf="admin==true">
+                <hr>
+                <h3>Status: {{this.status}}</h3>
+                <button class="btn btn-success btn-lg " (click)="accept()" *ngIf="this.status!='accepted'">Accept</button>
+                <button class="btn btn-info btn-lg " (click)="pending()" *ngIf="this.status!='pending'">Pending</button>
+                <button class="btn btn-danger btn-lg " (click)="reject()" *ngIf="this.status!='rejected'">Reject</button>
+              </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container">
+  <br><br>
+  <button class="btn btn-warning btn-lg func" (click)="pending()">Pending</button>
+  <button class="btn btn-success btn-lg func" (click)="accepted()">Accepted</button>
+  <button class="btn btn-danger btn-lg func" (click)="rejected()">Rejected</button>
+  <hr>
+  <h2>{{this.headline}}</h2>
+  <hr>
+  
+      <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i">
+        <div *ngIf="recipies.status==this.mystate">
+         <div *ngIf="recipies.status=='accepted'">
+         <li>
+          <button [routerLink]="['/adminpanel',recipies.recipename]" class="add" id="accepted">
+          <div id="menu">
+          <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
+          <h1> {{ recipies.recipename }}</h1>
+          <h4>Status: {{recipies.status}}</h4>
+         </div>
+          </button>
+        </li>
+        </div>
+
+        <div *ngIf="recipies.status=='rejected'">
+          <li >
+           <button [routerLink]="['/adminpanel',recipies.recipename]" class="add" id="rejected">
+           <div id="menu">
+           <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
+           <h1> {{ recipies.recipename }}</h1>
+           <h4>Status: {{recipies.status}}</h4>
+          </div>
+           </button>
+         </li>
+         </div>
+
+         <div *ngIf="recipies.status=='pending'">
+          <li >
+           <button [routerLink]="['/adminpanel',recipies.recipename]" class="add" id="pending">
+           <div id="menu">
+           <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
+           <h1> {{ recipies.recipename }}</h1>
+           <h4>Status: {{recipies.status}}</h4>
+          </div>
+           </button>
+         </li>
+         </div>
+        </div>
+      </ul>
+    
+</div>
+

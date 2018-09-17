@@ -1,0 +1,32 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="['/']">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/search']">Search<span class="sr-only">(current)</span></a>
+          </li>
+
+        <li class="nav-item active" *ngIf='authservice.loggedIn()'>
+            <a class="nav-link" [routerLink]="['/profile']">Profile <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item active" *ngIf='!authservice.loggedIn()'>
+          <a class="nav-link" [routerLink]="['/login']">LogIn <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active" *ngIf='!authservice.loggedIn()'>
+            <a class="nav-link" [routerLink]="['/register']">Register <span class="sr-only">(current)</span></a>
+          </li>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="#" (click)="logoutUser()" *ngIf='authservice.loggedIn()'>LogOut <span class="sr-only">(current)</span></a>
+          </li>
+    </ul>
+  </div>
+</nav>

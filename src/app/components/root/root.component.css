@@ -1,0 +1,29 @@
+#foodrecipes{
+    max-width: 50%;
+    position: relative;
+    left: 50%;
+    top: 300px;
+    transform: translateX(-50%);
+    
+
+}
+#particles-js{
+    /*background: gray;
+    height: 400px;*/
+   
+  position: relative;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url("../../../assets/images/rootcover.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover; 
+    opacity: 0.8;
+}
+button{
+  background-color: #514b37;
+  border-width: 3px;
+}
+button:hover{
+  color: black;
+  background-color: #c4bfae;
+  border-width: 3px;
+}

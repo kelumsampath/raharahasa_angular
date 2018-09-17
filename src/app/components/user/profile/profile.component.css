@@ -1,0 +1,55 @@
+.container{
+  color: aliceblue;
+  width: 80%;
+  background-color: #74707a;
+  border-style: double;
+  border-width: 5px;
+  border-color: #545952;
+  margin-top: 3%;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.profpic{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+table{
+  width: 80%;
+  text-align: left;
+  margin-left: 20%;
+}
+ul{
+  list-style-type:none;
+  margin-top: 20px;
+  height: 100px;
+  }
+.add{
+  width: 95%;
+  }
+#menupic{
+  width: 20%;
+  height: 100px;
+  float: left;
+}
+input[type='file'] {
+  color: transparent;
+  direction: rtl;
+  visibility:hidden; 
+}
+#files{
+  margin-left: 50%
+}
+#pending{
+  background-color: yellow;
+}
+#accepted{
+  background-color: green;
+}
+#rejected{
+  background-color: red;
+}
+#adminpanel{
+  margin-left: 0%
+}

@@ -1,0 +1,15 @@
+<form class="form" #form=ngForm (submit)="test()">
+  <fieldset>
+    <legend>Register</legend>
+
+      <div>
+          <img [src]="imageUrl" style="width: 250px; height: 200px;">
+          <input type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)" required>
+      </div>
+
+      <br><br>
+
+    <button type="submit" class="btn btn-success btn-lg" [disabled]="!form.valid">Register</button>
+    <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
+  </fieldset>
+</form>
