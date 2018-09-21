@@ -1,13 +1,14 @@
 
 .add{
     width: 100%;
-    height: 200px;
+   
     box-align:"left";
     border-style: solid;
     border-color: #605f5c; 
     text-align: center;
     background-color: #bcbbb7;
     border-radius: 10px;
+    padding-left: 3%;
 }
 .add:hover{
    color: aqua;
@@ -24,9 +25,7 @@ ul{
     margin-top: 20px;
     }
 img {
-    float: left;
-    height: 190px;
-    width: 300px;
+    float: center;
 }
 /*nav bar*/
 .nav_image {
@@ -58,15 +57,10 @@ img {
     background-color:#111111;
     
 }
-#menuitem{
-    float: left;
-    width: 75%;
-    padding: 10px;
-}
 
 #sidebar{
     float: right;
-    width: 25%;
+    
     padding: 10px;
 }
 .sidecontent{
@@ -106,4 +100,5 @@ img {
     border-color: #c9a428;
     border-style: solid;
     border-width: thick;
+
 }
