@@ -1,54 +1,92 @@
 
 
-<div id="menu-outer">
-  <div class="table">
-    <table id="horizontal-list">
-      <td><a (click)="all()" active><img src="../../../assets/images/navbar/all.jpg" alt="list item 1" class="nav_image" /></a></td>
-      <td><a (click)="riceNcurry()"><img src="../../../assets/images/navbar/ricecurry.jpg" alt="list item 2" class="nav_image" /></a></td>
-      <td><a (click)="cakes()"><img src="../../../assets/images/navbar/cakes.jpg" alt="list item 3" class="nav_image" /></a></td>
-      <td><a (click)="shortmeals()"><img src="../../../assets/images/navbar/7.jpg" alt="list item 4" class="nav_image" /></a></td>
-      <td><a (click)="other()"><img src="../../../assets/images/navbar/5.jpg" alt="list item 4" class="nav_image" /></a></td>
-      <td><a [routerLink]="['/addrecipe']"><img src="../../../assets/images/navbar/6.jpg" alt="list item 4" class="nav_image" /></a></td>
-    </table>
-  </div>
-</div>
-      
-        <div id="menuitem">
-        <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i">
-           <li *ngIf="catogary.mycatogory==recipies.catagory ">
-             <button [routerLink]="['/allrecipe',recipies.recipename]" class="add">
-             <div id="menu">
-             <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
-             <h1> {{ recipies.recipename }}</h1><br>
-             <h2>{{ recipies.description  }}</h2>
-            </div>
-             </button>
-           </li>
-           <li *ngIf="catogary.mycatogory=='all'">
-            <button [routerLink]="['/allrecipe',recipies.recipename]" class="add">
-            <div id="menu">
-            <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
-            <h1> {{ recipies.recipename }}</h1><br>
-            <h2>{{ recipies.description  }}</h2>
-           </div>
-            </button>
-          </li>
-          </ul>
-        </div>
 
-        <div id="sidebar">
-          <div class="sidecontent">
-              <h2 class='headline'>Most Popular Recipes</h2>
-              <ul *ngFor="let recipies of sidebarrecipe;let i = index" [attr.data-index]="i">
-              <li >
-                  <button [routerLink]="['/allrecipe',recipies.recipename]" class="sideadd">
-                  <div id="sidebarmenu">
-                  <img src="{{ recipies.imageUrl }}" id="sidebarpic" alt="" >
-                  <h1> {{ recipies.recipename }}</h1>
-                  likes: {{ recipies.likes  }}
+
+<table class="table table-striped" style="text-align:center;background-color: black;">
+    <thead>
+      <tr>
+        <th scope="col-dm-8">
+            <div class="dropdown">
+                <button class="dropbtn">SELECT CATOGARY</button>
+                <div class="dropdown-content">
+                    <button (click)="all()" class="btn btn-lg bar">ALL RECIPES</button><br>
+                    <button (click)="riceNcurry()" class="btn btn-lg bar">RICE & CURRY</button><br>
+                    <button (click)="cakes()" class="btn btn-lg bar">CAKE</button><br>
+                    <button (click)="shortmeals()" class="btn btn-lg bar">SHORT MEALS</button><br>
+                    <button (click)="other()" class="btn btn-lg bar">OTHER</button><br>
+                </div>
+              </div>
+        </th>
+        <th scope="col-dm-8">
+            <div class="dropdown">
+          <button [routerLink]="['/addrecipe']" class="dropbtn">ADD NEW RECIPE</button>
+              </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+      
+  
+    
+
+      <div class="container">
+          <div class="row">
+              
+            <div class="col-xs-7 col-sm-6 col-lg-8" >
+                <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i">
+                    <li *ngIf="catogary.mycatogory==recipies.catagory ">
+                      <button [routerLink]="['/allrecipe',recipies.recipename]" class="add">
+                        <div id="container"style="height:5%">
+                            <div class="row" style="height:5%">
+                              <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+                              <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+                              </div>
+                              <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                              <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+                              <h2 style="font-size:110%;">{{ recipies.description  }}</h2>
+                              </div>
+                            </div>
+                         </div>
+                      </button>
+                    </li>
+                    <li *ngIf="catogary.mycatogory=='all'">
+                     <button [routerLink]="['/allrecipe',recipies.recipename]" class=" add">
+                      <div id="container"style="height:5%">
+                          <div class="row" style="height:5%">
+                            <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+                            <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+                            </div>
+                            <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                            <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+                            <h2 style="font-size:110%;">{{ recipies.description  }}</h2>
+                            </div>
+                          </div>
+                       </div>
+                     </button>
+                   </li>
+                   </ul>
                  </div>
-                  </button>
-                </li>
-              </ul>
-          </div>
+
+                 <div class="col-xs-5 col-sm-6 col-lg-4"  >
+                    <div id="">
+                        <div class="sidecontent">
+                            <h2 class='headline'>Most Popular Recipes</h2>
+                            <ul *ngFor="let recipies of sidebarrecipe;let i = index" [attr.data-index]="i">
+                            <li >
+                                <button [routerLink]="['/allrecipe',recipies.recipename]" class="sideadd">
+                                <div id="sidebarmenu">
+                                <img src="{{ recipies.imageUrl }}" id="sidebarpic" alt="" >
+                                <h1> {{ recipies.recipename }}</h1>
+                                likes: {{ recipies.likes  }}
+                               </div>
+                                </button>
+                              </li>
+                            </ul>
+                        </div>
+                </div>
+              </div>
+               
+                 
+            </div>
+           
         </div>
