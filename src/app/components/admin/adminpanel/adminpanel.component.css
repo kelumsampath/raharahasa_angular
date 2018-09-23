@@ -1,5 +1,4 @@
 .container{
-    width: 80%;
     background-color: bisque;
     border-style: double;
     border-width: 5px;
@@ -8,22 +7,32 @@
     text-align: center;
   }
   .add{
-    width: 80%;
-    height: 200px;
+    width: 100%;
+   
     box-align:"left";
     border-style: solid;
-    border-color: red; 
+    border-color: #605f5c; 
     text-align: center;
-    background-color: blue;
+    background-color: #bcbbb7;
+    border-radius: 10px;
+    padding-left: 3%;
+}
+.add:hover{
+   color: aqua;
+    transition:all 0.40s ease-in;
+    background-color: #605b4b;
+    border-radius: 10px;
+    border-color: #c9a428;
+    border-style: solid;
+    border-width: thick;
+    
 }
 ul{
     list-style-type:none;
     margin-top: 20px;
     }
 img {
-    float: left;
-    height: 190px;
-    width: 300px;
+    float: center;
 }
 
 

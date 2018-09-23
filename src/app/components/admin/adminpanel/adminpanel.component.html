@@ -12,11 +12,18 @@
          <div *ngIf="recipies.status=='accepted'">
          <li>
           <button [routerLink]="['/adminpanel',recipies.recipename]" class="add" id="accepted">
-          <div id="menu">
-          <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
-          <h1> {{ recipies.recipename }}</h1>
-          <h4>Status: {{recipies.status}}</h4>
-         </div>
+            <div id="container"style="height:5%">
+                <div class="row" style="height:5%">
+                  <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+                  <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+                  </div>
+                  <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                  <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+                  <h2 style="font-size:160%;">Status: {{recipies.status}}</h2>
+                  <h2 style="font-size:160%;">Administrator review: {{recipies.admincomment}}</h2>
+                  </div>
+                </div>
+             </div>
           </button>
         </li>
         </div>
@@ -24,11 +31,18 @@
         <div *ngIf="recipies.status=='rejected'">
           <li >
            <button [routerLink]="['/adminpanel',recipies.recipename]" class="add" id="rejected">
-           <div id="menu">
-           <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
-           <h1> {{ recipies.recipename }}</h1>
-           <h4>Status: {{recipies.status}}</h4>
-          </div>
+            <div id="container"style="height:5%">
+                <div class="row" style="height:5%">
+                  <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+                  <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+                  </div>
+                  <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                  <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+                  <h2 style="font-size:160%;">Status: {{recipies.status}}</h2>
+                  <h2 style="font-size:160%;">Administrator review: {{recipies.admincomment}}</h2>
+                  </div>
+                </div>
+             </div>
            </button>
          </li>
          </div>
@@ -36,11 +50,18 @@
          <div *ngIf="recipies.status=='pending'">
           <li >
            <button [routerLink]="['/adminpanel',recipies.recipename]" class="add" id="pending">
-           <div id="menu">
-           <img src="{{ recipies.imageUrl }}" id="pic" alt="" height="100px">
-           <h1> {{ recipies.recipename }}</h1>
-           <h4>Status: {{recipies.status}}</h4>
-          </div>
+            <div id="container"style="height:5%">
+                <div class="row" style="height:5%">
+                  <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+                  <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+                  </div>
+                  <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                  <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+                  <h2 style="font-size:160%;">Status: {{recipies.status}}</h2>
+                  <h2 style="font-size:160%;">Administrator review: {{recipies.admincomment}}</h2>
+                  </div>
+                </div>
+             </div>
            </button>
          </li>
          </div>
