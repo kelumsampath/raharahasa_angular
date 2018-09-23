@@ -2,7 +2,7 @@
     max-width: 50%;
     position: relative;
     left: 50%;
-    top: 300px;
+    top: 10%;;
     transform: translateX(-50%);
     
 
@@ -26,4 +26,16 @@ button:hover{
   color: black;
   background-color: #c4bfae;
   border-width: 3px;
+}
+.content{
+  text-align: center;
+  color: black;
+}
+img{
+  border-radius: 10%;
+  margin-top: 3%;
+}
+.container{
+  background-color: rgba(179, 157, 157,0.6);
+  height: 100%;
 }

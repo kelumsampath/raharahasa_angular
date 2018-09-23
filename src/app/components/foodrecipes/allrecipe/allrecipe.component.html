@@ -74,11 +74,17 @@
                             <ul *ngFor="let recipies of sidebarrecipe;let i = index" [attr.data-index]="i">
                             <li >
                                 <button [routerLink]="['/allrecipe',recipies.recipename]" class="sideadd">
-                                <div id="sidebarmenu">
-                                <img src="{{ recipies.imageUrl }}" id="sidebarpic" alt="" >
-                                <h1> {{ recipies.recipename }}</h1>
-                                likes: {{ recipies.likes  }}
-                               </div>
+                                  <div id="container"style="height:5%">
+                                    <div class="row" style="height:5%">
+                                      <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2%;">
+                                      <img src="{{ recipies.imageUrl }}" id="sidepic" class="img-rounded" alt="" style="width:100%;margin-top: -30%;margin-left:5%;">
+                                      </div>
+                                      <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;margin-top: -5%;">
+                                      <h1  style="font-size:120%;"> {{ recipies.recipename }}</h1><br>
+                                      <h2 style="font-size:100%;margin-top:-10%;">LIKES : {{ recipies.likes  }}</h2>
+                                      </div>
+                                    </div>
+                                 </div>
                                 </button>
                               </li>
                             </ul>

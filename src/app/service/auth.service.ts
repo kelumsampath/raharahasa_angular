@@ -36,11 +36,14 @@ export class AuthService {
   };
 
 getprofile(){
+  const user={
+    "user":"user"
+  }
   this.fetchtoken();
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile",{headers:headers}).map(res=>res.json());
+  return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/profile",user,{headers:headers}).map(res=>res.json());
   
 };
 fetchtoken(){
@@ -50,7 +53,9 @@ fetchtoken(){
 
 
 logOut(){
-
+  const user={
+    "user":"user"
+  }
   this.fetchtoken();
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
@@ -58,7 +63,7 @@ logOut(){
   this.authtoken = null;
   this.user = null;
   localStorage.clear();
-  return this.http.get("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout",{headers:headers}).map(res=>res.json()); 
+  return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/user/logout",user,{headers:headers}).map(res=>res.json()); 
 }
 
 
@@ -142,7 +147,7 @@ unlikeRecipe(recipename){
   //console.log(this.authtoken);
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/unlikerecipe",recipeData,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com/foodrecipe/unlikerecipe",recipeData,{headers:headers}).map(res=>res.json());
 }
 
 checklike(recipename){

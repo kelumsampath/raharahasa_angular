@@ -17,14 +17,10 @@ ul{
     list-style-type:none;
     margin-top: 20px;
     }
-img {
-    float: left;
-    height: 100px;
-    width: 100px;
-}
+
 .container{
     background-color:floralwhite;
-    width: 60%;
+   
     border-style: double;
     border-width: 5px;
     border-color: #545952;
@@ -34,17 +30,20 @@ img {
 .norecipe{
     text-align: center;
 }
+img {
+    float: center;
+}
 
 .add{
-    width: 60%;
-    height: 120px;
-    box-align:center;
+    width: 100%;
+   
+    box-align:"left";
     border-style: solid;
     border-color: #605f5c; 
     text-align: center;
     background-color: #bcbbb7;
     border-radius: 10px;
-   
+    padding-left: 3%;
 }
 .add:hover{
    color: aqua;
@@ -55,6 +54,13 @@ img {
     border-style: solid;
     border-width: thick;
     
+}
+ul{
+    list-style-type:none;
+    margin-top: 20px;
+    }
+img {
+    float: center;
 }
 
 .searchtab{

@@ -2,28 +2,28 @@
 <form class="form" #form=ngForm (submit)="registerData()">
     <fieldset>
       <legend><h2>Register</h2></legend>
-        <div class="form-group">
+        <div class="form-group" style="width:50%;margin-left:25%;">
             <label for="exampleInputPassword1">First Name:</label>
             <input type="text" class="form-control" id="inputfullname" placeholder="Your firstname" name="fullname" [(ngModel)]="fullname" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" style="width:50%;margin-left:25%;">
               <label for="exampleInputPassword1">Last name:</label>
               <input type="text" class="form-control" id="inputname" placeholder="Your lastname" name="lastname" [(ngModel)]="lastname" required >
             </div>
 
-          <div class="form-group">
+          <div class="form-group" style="width:50%;margin-left:25%;">
               <label for="exampleInputPassword1">Email:</label>
               <input type="text" class="form-control" id="inputemail" placeholder="Your email" name="email" [(ngModel)]="email" required>
             </div>
 
-          <div class="form-group">
+          <div class="form-group" style="width:50%;margin-left:25%;">
               <label for="exampleInputPassword1">Phone Numer:</label>
               <input type="number" class="form-control" id="inputphoneno" placeholder="Your phone number" name="phoneno" [(ngModel)]="phoneno" required>
             </div>
 
 
-        <div>
+        <div >
             <img [src]="imageUrl" style="width: 250px; height: 200px;">
             <input type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)" required>
         </div>

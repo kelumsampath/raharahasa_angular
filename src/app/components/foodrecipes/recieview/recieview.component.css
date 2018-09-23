@@ -22,7 +22,7 @@ img{
 }
 
 .container{
-    width: 60%;
+    
     background-color: floralwhite;
     border-style: double;
     border-width: 5px;
@@ -30,5 +30,5 @@ img{
     margin-top: 3%;
     text-align: center;
     margin-bottom: 3%;
-    font-size: 5mm;
+    font-size: 160%;
   }
