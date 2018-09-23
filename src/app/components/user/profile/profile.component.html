@@ -15,10 +15,13 @@
   <table >
     <tr>
     <td><h3>First name: {{user.fullname}} </h3></td>
+    </tr>
+    <tr>
     <td><h3>Last name: {{user.lastname}} </h3></td>
   </tr>
   <tr>
     <td><h3>Email: {{user.email}}</h3></td>
+  </tr><tr>
     <td><h3>Phone Number: {{user.phoneno}}</h3></td>
   </tr>
   <tr>
@@ -45,11 +48,11 @@
 <div *ngIf="editData==true">
   <table >
     <tr>
-    <td><h3>Full name: <input type="text" name="fullname" placeholder="{{user.fullname}}" [(ngModel)]="fullname" > </h3></td>
+    <td><h3>Full name: <input type="text" name="fullname" placeholder="{{user.fullname}}" [(ngModel)]="fullname" > </h3></td></tr><tr>
     <td><h3>Last name: <input type="text" name="lastname" placeholder="{{user.lastname}}" [(ngModel)]="lastname" > </h3></td>
   </tr>
   <tr>
-    <td><h3>Email:  <input type="email" name="email" placeholder="{{user.email}}" [(ngModel)]="email" > </h3></td>
+    <td><h3>Email:  <input type="email" name="email" placeholder="{{user.email}}" [(ngModel)]="email" > </h3></td></tr><tr>
     <td><h3>Phone Number: <input type="number" name="phoneno" placeholder="{{user.phoneno}}" [(ngModel)]="phoneno" > </h3></td>
   </tr>
   <tr>
@@ -65,38 +68,56 @@
   <button class="btn btn-danger btn-lg" (click)="deleteacc()">DELETE ACCOUNT</button>
   <hr>
   <h4>My Recipes</h4>
-  <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i" class="add">
+  <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i" >
       <li *ngIf="recipies.status=='pending'" >
        <button [routerLink]="['/profile',recipies.recipename]" class="add" id="pending">
-       <div id="menu">
-       <img src="{{ recipies.imageUrl }}" id="menupic" alt="">
-       <h1> {{ recipies.recipename }}</h1>
-      <h4>likes:{{ recipies.likes  }}</h4>
-      <h4>Status: {{recipies.status}}</h4>
-      <h4>Administrator review: {{recipies.admincomment}}</h4>
-      </div>
+        <div id="container"style="height:5%">
+            <div class="row" style="height:5%">
+              <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+              <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+              </div>
+              <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+              <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+              <h2 style="font-size:160%;">likes:{{ recipies.likes  }}</h2>
+              <h2 style="font-size:160%;">Status: {{recipies.status}}</h2>
+              <h2 style="font-size:160%;">Administrator review: {{recipies.admincomment}}</h2>
+              </div>
+            </div>
+         </div>
        </button>
      </li>
      <li *ngIf="recipies.status=='accepted'">
-      <button [routerLink]="['/profile',recipies.recipename]" class="add" id="accepted">
-      <div id="menu">
-      <img src="{{ recipies.imageUrl }}" id="menupic" alt="">
-      <h1> {{ recipies.recipename }}</h1>
-     <h4>likes:{{ recipies.likes  }}</h4>
-     <h4>Status: {{recipies.status}}</h4>
-     <h4>Administrator review: {{recipies.admincomment}}</h4>
-     </div>
-      </button>
+        <button [routerLink]="['/allrecipe',recipies.recipename]" class=" add" id="accepted">
+          <div id="container"style="height:5%">
+              <div class="row" style="height:5%">
+                <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+                <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+                </div>
+                <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+                <h2 style="font-size:160%;">likes:{{ recipies.likes  }}</h2>
+                <h2 style="font-size:160%;">Status: {{recipies.status}}</h2>
+                <h2 style="font-size:160%;">Administrator review: {{recipies.admincomment}}</h2>
+                </div>
+              </div>
+           </div>
+         </button>
     </li>
     <li *ngIf="recipies.status=='rejected'">
       <button [routerLink]="['/profile',recipies.recipename]" class="add" id="rejected">
-      <div id="menu">
-      <img src="{{ recipies.imageUrl }}" id="menupic" alt="">
-      <h1> {{ recipies.recipename }}</h1>
-     <h4>likes:{{ recipies.likes  }}</h4>
-     <h4>Status: {{recipies.status}}</h4>
-     <h4>Administrator review: {{recipies.admincomment}}</h4>
-     </div>
+        <div id="container"style="height:5%">
+            <div class="row" style="height:5%">
+              <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2% ">
+              <img src="{{ recipies.imageUrl }}" id="pic" class="img-rounded" alt="" style="width:100%;">
+              </div>
+              <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+              <h1  style="font-size:210%;"> {{ recipies.recipename }}</h1><br>
+              <h2 style="font-size:160%;">likes:{{ recipies.likes  }}</h2>
+              <h2 style="font-size:160%;">Status: {{recipies.status}}</h2>
+              <h2 style="font-size:160%;">Administrator review: {{recipies.admincomment}}</h2>
+              </div>
+            </div>
+         </div>
       </button>
     </li>
      </ul>

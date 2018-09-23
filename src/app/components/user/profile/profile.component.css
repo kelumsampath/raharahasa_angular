@@ -1,6 +1,5 @@
 .container{
   color: aliceblue;
-  width: 80%;
   background-color: #74707a;
   border-style: double;
   border-width: 5px;
@@ -16,18 +15,37 @@
   height: 200px;
 }
 table{
-  width: 80%;
   text-align: left;
-  margin-left: 20%;
+}
+
+  .add{
+    width: 100%;
+   
+    box-align:"left";
+    border-style: solid;
+    border-color: #605f5c; 
+    text-align: center;
+    background-color: #bcbbb7;
+    border-radius: 10px;
+    padding-left: 3%;
+}
+.add:hover{
+   color: aqua;
+    transition:all 0.40s ease-in;
+    background-color: #605b4b;
+    border-radius: 10px;
+    border-color: #c9a428;
+    border-style: solid;
+    border-width: thick;
+    
 }
 ul{
-  list-style-type:none;
-  margin-top: 20px;
-  height: 100px;
-  }
-.add{
-  width: 95%;
-  }
+    list-style-type:none;
+    margin-top: 20px;
+    }
+img {
+    float: center;
+}
 #menupic{
   width: 20%;
   height: 100px;
