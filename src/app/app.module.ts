@@ -15,7 +15,6 @@ import { Router } from '@angular/router/src/router';
 import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth.guard';
 import { RootComponent } from './components/root/root.component';
-import { TestComponent } from './components/test/test.component';
 import { FoodrecipeComponent } from './components/foodrecipes/foodrecipe/foodrecipe.component';
 import { AddrecipeComponent } from './components/foodrecipes/addrecipe/addrecipe.component';
 import { AllrecipeComponent } from './components/foodrecipes/allrecipe/allrecipe.component';
@@ -31,7 +30,6 @@ const applicationRoutes:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
   {path:'foodrecipe',component:FoodrecipeComponent},
-  {path:'test',component:TestComponent},
   {path:'addrecipe',component:AddrecipeComponent, canActivate: [AuthGuard]},
   {path:'allrecipe',component:AllrecipeComponent},
   {path:'allrecipe/:recipename',component:RecieviewComponent},
@@ -49,7 +47,6 @@ const applicationRoutes:Routes = [
     RegisterComponent,
     ProfileComponent,
     RootComponent,
-    TestComponent,
     FoodrecipeComponent,
     AddrecipeComponent,
     AllrecipeComponent,
