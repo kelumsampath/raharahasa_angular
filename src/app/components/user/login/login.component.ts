@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   fogotpassword(){
     var myname={
-      myname:prompt("Enter User name:","Username")
+      myname:prompt("Enter Email:","email")
     } 
 
     if(myname.myname!=null){
