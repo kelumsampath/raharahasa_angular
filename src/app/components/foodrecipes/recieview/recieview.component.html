@@ -49,7 +49,11 @@
           <button [routerLink]="['../']" class="btn btn-info btn-lg back">
               <span class="glyphicon glyphicon-chevron-left"></span> Back
           </button>
-          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.rasarahasa.com%2Fallrecipe%2F&layout=button_count&size=large&mobile_iframe=true&width=84&height=28&appId" width="84" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+          
+          
+
+            <iframe id="myshare" src="" width="83" height="28" style="border:none;overflow:hidden" scrolling="no"  frameborder="0" allowTransparency="true"></iframe>
+          
           <button class="btn btn-info btn-lg liked" (click)="unlike()" *ngIf="Islike">
               <span class="glyphicon glyphicon-thumbs-up"></span> Liked
           </button>

@@ -14,8 +14,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+
+  <script>
+      function myFunction() {
+      var x = document.URL;
+      //alert(x);
+      document.getElementById("myshare").src = 'https://www.facebook.com/plugins/share_button.php?href='+x+'&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId';
+     }
+     </script>
+
 </head>
-<body>
+<body onload="myFunction()">
    <app-root></app-root>
 </body>
 </html>
