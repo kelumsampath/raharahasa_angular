@@ -32,7 +32,9 @@ export class AddrecipeComponent implements OnInit {
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
     private _location: Location
-  ) { }
+  ) { 
+    this.fileToUpload = new File([""], "defualt.jpg");
+  }
 
   ngOnInit() {
   }

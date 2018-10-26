@@ -62,8 +62,9 @@ export class RecieviewComponent implements OnInit {
     //this.title.setTitle(this.recipe.recipename);
     this.meta.updateTag({ name: 'og:title', content: this.recipe.recipename })
     this.meta.updateTag({ name: 'description', content: this.recipe.description })
-    this.meta.updateTag({ name: 'og:site_name', content: 'http://www.rasarahasa.com' })
+    //this.meta.updateTag({ name: 'og:site_name', content: 'http://www.rasarahasa.com' })
     this.meta.updateTag({ property: 'og:image', content: this.recipe.imageUrl })
+  
         this.status=res.recipe.status;
         //console.log(myrecipe);
        /// console.log(this.recipe.recipename);
