@@ -52,7 +52,7 @@
           
           
 
-            <iframe id="myshare" src="" width="83" height="28" style="border:none;overflow:hidden" scrolling="no"  frameborder="0" allowTransparency="true"></iframe>
+            <iframe id="myshare" [src]='shareurl()' width="83" height="28" style="border:none;overflow:hidden" scrolling="no"  frameborder="0" allowTransparency="true"></iframe>
           
           <button class="btn btn-info btn-lg liked" (click)="unlike()" *ngIf="Islike">
               <span class="glyphicon glyphicon-thumbs-up"></span> Liked

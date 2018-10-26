@@ -21,7 +21,11 @@ export class RegisterComponent implements OnInit {
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
-  ) { }
+  ) {
+    this.fileToUpload = new File([""], "defualt.jpg");
+    //this.fileToUpload = new File([''], "../../../assets/images/defualt.jpg");
+    //console.log(this.fileToUpload);
+   }
 
   ngOnInit() {
   }

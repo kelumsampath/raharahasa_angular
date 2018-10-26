@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../service/auth.service';
 import { NgFlashMessageService } from 'ng-flash-messages';
 import { AuthGuard } from '../../../service/auth.guard'
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-recieview',
@@ -20,11 +21,15 @@ export class RecieviewComponent implements OnInit {
   isrealuser:boolean;
   admin:boolean;
   status:String;
+  
   constructor(private activatedRoute: ActivatedRoute,
               private authservice:AuthService,
               private ngFlashMessageService: NgFlashMessageService,
               private router:Router,
-              private authguard:AuthGuard
+              private authguard:AuthGuard,
+              private sanitizer: DomSanitizer,
+              private title: Title,
+              private meta: Meta
   ) {
     this.admin=false;
     this.myrecipe={
@@ -53,6 +58,12 @@ export class RecieviewComponent implements OnInit {
           "imageUrl" :this.recipe.imageUrl,
           "likes":this.likes,
           }
+          
+    //this.title.setTitle(this.recipe.recipename);
+    this.meta.updateTag({ name: 'og:title', content: this.recipe.recipename })
+    this.meta.updateTag({ name: 'description', content: this.recipe.description })
+    this.meta.updateTag({ name: 'og:site_name', content: 'http://www.rasarahasa.com' })
+    this.meta.updateTag({ property: 'og:image', content: this.recipe.imageUrl })
         this.status=res.recipe.status;
         //console.log(myrecipe);
        /// console.log(this.recipe.recipename);
@@ -96,6 +107,10 @@ export class RecieviewComponent implements OnInit {
   }
 
   
+  public shareurl(){
+    let fbsrc = 'https://www.facebook.com/plugins/share_button.php?href=http://www.rasarahasa.com/'+ this.router.url +'&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&appId';
+    return this.sanitizer.bypassSecurityTrustResourceUrl(fbsrc);
+  }
 
   like(){
     if(this.authguard.canActivate()){
