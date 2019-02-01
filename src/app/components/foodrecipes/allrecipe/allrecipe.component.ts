@@ -14,6 +14,8 @@ export class AllrecipeComponent implements OnInit {
   imgurl:String;
   sidebarrecipe:any;
   sidebarimgurl:String;
+  weeklysidebarrecipe:any;
+  weeklysidebarimgurl:String;
   catogary:any;
   constructor(
     private authservice:AuthService,
@@ -35,6 +37,19 @@ export class AllrecipeComponent implements OnInit {
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
         }
     });
+    this.authservice.weeklygetMostliked().subscribe(res=>{
+      if(res.state){
+        this.weeklysidebarrecipe = res.recipe;
+        this.weeklysidebarimgurl = res.pic_url;
+        //console.log("ds");
+       // console.log(res.recipe);
+        //this.recipe=res.recipe;
+        //console.log(this.sidebarrecipe);
+      }
+        else{
+          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+        }
+    })
     this.authservice.getMostliked().subscribe(res=>{
       if(res.state){
         this.sidebarrecipe = res.recipe;

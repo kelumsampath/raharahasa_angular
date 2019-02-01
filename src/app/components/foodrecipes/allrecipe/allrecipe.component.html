@@ -70,14 +70,14 @@
                  <div class="col-xs-5 col-sm-6 col-lg-4"  >
                     <div id="">
                         <div class="sidecontent">
-                            <h2 class='headline'>Most Popular Recipes</h2>
-                            <ul *ngFor="let recipies of sidebarrecipe;let i = index" [attr.data-index]="i">
+                            <h2 class='headline'>Popular Recipes of this week</h2>
+                            <ul *ngFor="let recipies of weeklysidebarrecipe;let i = index" [attr.data-index]="i">
                             <li >
                                 <button [routerLink]="['/allrecipe',recipies.recipename]" class="sideadd">
                                   <div id="container"style="height:5%">
                                     <div class="row" style="height:5%">
                                       <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2%;">
-                                      <img src="{{ recipies.imageUrl }}" id="sidepic" class="img-rounded" alt="" style="width:100%;margin-top: -30%;margin-left:5%;">
+                                      <img src="{{ recipies.imageUrl }}" id="sidepic" class="img-rounded" alt="" style="height: 70px;width:80px;margin-top: -30%;margin-left:5%;">
                                       </div>
                                       <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;margin-top: -5%;">
                                       <h1  style="font-size:120%;"> {{ recipies.recipename }}</h1><br>
@@ -90,6 +90,29 @@
                             </ul>
                         </div>
                 </div>
+                  <hr>
+                <div id="">
+                    <div class="sidecontent">
+                        <h2 class='headline'>Most Popular Recipes</h2>
+                        <ul *ngFor="let recipies of sidebarrecipe;let i = index" [attr.data-index]="i">
+                        <li >
+                            <button [routerLink]="['/allrecipe',recipies.recipename]" class="sideadd">
+                              <div id="container"style="height:5%">
+                                <div class="row" style="height:5%">
+                                  <div class="col-dm-8 col-md-push-3"  style="width:40%; padding-left:2%;">
+                                  <img src="{{ recipies.imageUrl }}" id="sidepic" class="img-rounded" alt="" style="height: 70px;width:80px;margin-top: -30%;margin-left:5%;">
+                                  </div>
+                                  <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;margin-top: -5%;">
+                                  <h1  style="font-size:120%;"> {{ recipies.recipename }}</h1><br>
+                                  <h2 style="font-size:100%;margin-top:-10%;">LIKES : {{ recipies.likes  }}</h2>
+                                  </div>
+                                </div>
+                             </div>
+                            </button>
+                          </li>
+                        </ul>
+                    </div>
+            </div>
               </div>
                
                  
