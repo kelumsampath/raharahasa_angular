@@ -7,8 +7,8 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   user:any;
   authtoken:any;
-  //url="http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com"
-  url="http://localhost:9000"
+  url="http://ec2-13-59-30-146.us-east-2.compute.amazonaws.com"
+  //url="http://localhost:9000"
 
   constructor(
     private http:Http,
